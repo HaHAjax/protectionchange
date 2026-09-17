@@ -1,0 +1,13 @@
+{
+  "itemGroup.protectionchange": "Example Mod Tab",
+  "block.protectionchange.example_block": "Example Block",
+  "item.protectionchange.example_item": "Example Item",
+
+  "protectionchange.configuration.title": "Protection Change Configs",
+  "protectionchange.configuration.section.protectionchange.common.toml": "Protection Change Configs",
+  "protectionchange.configuration.section.protectionchange.common.toml.title": "Protection Change Configs",
+  "protectionchange.configuration.items": "Item List",
+  "protectionchange.configuration.logDirtBlock": "Log Dirt Block",
+  "protectionchange.configuration.magicNumberIntroduction": "Magic Number Text",
+  "protectionchange.configuration.magicNumber": "Magic Number"
+}
