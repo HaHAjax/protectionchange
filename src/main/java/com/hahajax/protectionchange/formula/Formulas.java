@@ -20,7 +20,7 @@ public interface Formulas {
 
 	static float squareRootCurve(float damage, float protLevels, float protMax, float linearRate, float rootConstant, float rootExponent) {
 		float p = Mth.clamp(protLevels, 0.0F, protMax);
-		return damage * (1.0F - rootConstant * (p * rootExponent));
+		return damage * (1.0F - rootConstant * (float) Math.pow(p, rootExponent));
 	}
 
 	// TODO: add custom formula input to config and make it work here
