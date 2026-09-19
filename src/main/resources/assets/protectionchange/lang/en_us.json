@@ -3,6 +3,6 @@
   "block.protectionchange.example_block": "Example Block",
   "item.protectionchange.example_item": "Example Item",
 
-  "protectionchange.configuration.title": "Protection Change Config",
-  "protectionchange.configuration.formulaType": "Formula Preset"
+  "protectionchange.midnightconfig.title": "Protection Change Config",
+  "protectionchange.midnightconfig.formulaType": "Formula Type"
 }
