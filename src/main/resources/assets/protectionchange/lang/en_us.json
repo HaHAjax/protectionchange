@@ -7,6 +7,8 @@
   "protectionchange.midnightconfig.maxProtLevels.tooltip": "Maximum level of protection across all armor.\nCan be calculated by multiplying the maximum level of protection obtainable by 4; vanilla is 20, as protection only goes up to 4.\nUsed across all formulas.",
   "protectionchange.midnightconfig.sqrtConstant": "Square Root Constant",
   "protectionchange.midnightconfig.sqrtConstant.tooltip": "Constant to use for the SQUARE_ROOT formula.\nMust be between 0 and 1.\nOnly used for the SQUARE_ROOT formula.",
+  "protectionchange.midnightconfig.rootExponent": "Root Exponent",
+  "protectionchange.midnightconfig.rootExponent.tooltip": "The exponent to use for the root.\nMust be between 0 and 1.\nOnly change if you know what you're doing; leave at 0.5 for square root",
   "protectionchange.midnightconfig.linearRate": "Linear rate",
   "protectionchange.midnightconfig.linearRate.tooltip": "The rate at which each level of protection increases its damage reduction, as a percentage per level.\nA rate of 0.04 replicates vanilla's formula, as this is effectively how vanilla does it.\nOnly used for the LINEAR formula."
 }
