@@ -4,5 +4,10 @@
   "item.protectionchange.example_item": "Example Item",
 
   "protectionchange.midnightconfig.title": "Protection Change Config",
-  "protectionchange.midnightconfig.formulaType": "Formula Type"
+  "protectionchange.midnightconfig.formulaType": "Formula Type",
+  "protectionchange.midnightconfig.formulaType.tooltip": "Type of formula to use. CUSTOM isn't currently implemented",
+  "protectionchange.midnightconfig.maxProtLevels": "Max Protection Levels",
+  "protectionchange.midnightconfig.maxProtLevels.tooltip": "Maximum level of protection across all armor. Can be calculated by multiplying the maximum level of protection for your pack by 4.",
+  "protectionchange.midnightconfig.formulaConstant": "Formula Constant",
+  "protectionchange.midnightconfig.formulaConstant.tooltip": "Constant to use for the formulas."
 }

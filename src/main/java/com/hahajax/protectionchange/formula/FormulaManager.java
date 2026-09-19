@@ -13,10 +13,10 @@ public class FormulaManager {
 	public static void updateStrategy() {
 		activeStrategy = switch (ProtectionChangeMidnightConfig.formulaType) {
 			case VANILLA -> Formulas::vanilla;
-			case TYPE_1 -> Formulas::test1;
+			case SQUARE_ROOT -> Formulas::squareRoot;
 			case TYPE_2 -> Formulas::test2;
 			case TYPE_3 -> Formulas::test3;
-			case CUSTOM -> Formulas::testCustom;
+			case CUSTOM -> Formulas::custom;
 			default -> Formulas::invalid;
 		};
 	}

@@ -1,6 +1,7 @@
 package com.hahajax.protectionchange.formula;
 
 import com.hahajax.protectionchange.ProtectionChange;
+import com.hahajax.protectionchange.config.ProtectionChangeMidnightConfig;
 import net.minecraft.util.Mth;
 
 public interface Formulas {
@@ -17,8 +18,11 @@ public interface Formulas {
 		return 0;
 	}
 
-	static float test1(float damage, float protLevels) {
-		return (damage / 2);
+	static float squareRoot(float damage, float protLevels) {
+//		return (damage / 2);
+		float p = Mth.clamp(protLevels, 0.0F, ProtectionChangeMidnightConfig.maxProtLevels);
+		float c = ProtectionChangeMidnightConfig.formulaConstant;
+		return damage * (1.0F - c * Mth.sqrt(p));
 	}
 
 	static float test2(float damage, float protLevels) {
@@ -30,7 +34,7 @@ public interface Formulas {
 	}
 
 	// TODO: add custom formula input to config and make it work here
-	static float testCustom(float damage, float protLevels) {
+	static float custom(float damage, float protLevels) {
 		return (damage);
 	}
 }

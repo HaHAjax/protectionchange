@@ -2,6 +2,7 @@ package com.hahajax.protectionchange;
 
 import com.hahajax.protectionchange.config.ProtectionChangeMidnightConfig;
 //import com.hahajax.protectionchange.config.ProtectionChangeConfig;
+import com.hahajax.protectionchange.formula.FormulaManager;
 import eu.midnightdust.lib.config.MidnightConfig;
 import org.slf4j.Logger;
 
@@ -23,5 +24,6 @@ public class ProtectionChange {
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public ProtectionChange(IEventBus modEventBus, ModContainer modContainer) {
         MidnightConfig.init(ProtectionChange.MODID, ProtectionChangeMidnightConfig.class);
+        FormulaManager.updateStrategy();
     }
 }
