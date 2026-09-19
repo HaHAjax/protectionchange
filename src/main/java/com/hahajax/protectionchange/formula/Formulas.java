@@ -7,10 +7,8 @@ import net.minecraft.util.Mth;
 public interface Formulas {
 	float calculate(float damage, float protLevels);
 
-	static float vanilla(float damage, float protLevels) {
-		float f = Mth.clamp(protLevels, 0.0F, 20.0F);
-		return damage * (1.0F - f / 25.0F);
-	}
+	float protMax = ProtectionChangeMidnightConfig.maxProtLevels;
+
 
 	static float invalid(float damage, float protLevels) {
 		ProtectionChange.LOGGER.error("Invalid formula type in ProtectionChange config");
@@ -18,10 +16,14 @@ public interface Formulas {
 		return 0;
 	}
 
-	static float squareRoot(float damage, float protLevels) {
-//		return (damage / 2);
-		float p = Mth.clamp(protLevels, 0.0F, ProtectionChangeMidnightConfig.maxProtLevels);
-		float c = ProtectionChangeMidnightConfig.formulaConstant;
+	static float linear(float damage, float protLevels) {
+		float p = Mth.clamp(protLevels, 0.0F, protMax);
+		return damage * (1.0F - p * ProtectionChangeMidnightConfig.linearRate);
+	}
+
+	static float squareRootCurve(float damage, float protLevels) {
+		float p = Mth.clamp(protLevels, 0.0F, protMax);
+		float c = ProtectionChangeMidnightConfig.sqrtConstant;
 		return damage * (1.0F - c * Mth.sqrt(p));
 	}
 
