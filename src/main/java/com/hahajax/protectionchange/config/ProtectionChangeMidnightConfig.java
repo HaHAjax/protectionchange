@@ -3,7 +3,7 @@ package com.hahajax.protectionchange.config;
 import com.hahajax.protectionchange.formula.FormulaManager;
 import eu.midnightdust.lib.config.MidnightConfig;
 
-public class MidnightTestConfigClass extends MidnightConfig {
+public class ProtectionChangeMidnightConfig extends MidnightConfig {
 
 	@Entry(category = "default") public static FormulaType formulaType = FormulaType.VANILLA;
 	public enum FormulaType {

@@ -1,7 +1,7 @@
 package com.hahajax.protectionchange.formula;
 
 
-import com.hahajax.protectionchange.config.MidnightTestConfigClass;
+import com.hahajax.protectionchange.config.ProtectionChangeMidnightConfig;
 
 public class FormulaManager {
 	private static Formulas activeStrategy = Formulas::vanilla;
@@ -11,7 +11,7 @@ public class FormulaManager {
 	}
 
 	public static void updateStrategy() {
-		activeStrategy = switch (MidnightTestConfigClass.formulaType) {
+		activeStrategy = switch (ProtectionChangeMidnightConfig.formulaType) {
 			case VANILLA -> Formulas::vanilla;
 			case TYPE_1 -> Formulas::test1;
 			case TYPE_2 -> Formulas::test2;
