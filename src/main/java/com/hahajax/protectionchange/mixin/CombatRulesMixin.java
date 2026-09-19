@@ -15,14 +15,14 @@ public class CombatRulesMixin {
 			at = @At("RETURN"),
 			cancellable = true
 	)
-	private static void modifyDamageAfterMagicAbsorb(float damage, float enchantModifiers, CallbackInfoReturnable<Float> cir) {
-		// enchantModifiers is the sum of protection levels across all armor pieces
-		// damage is the amount of damage after effects like resistance. unsure if it's before or after normal armor/toughness DR
+	private static void modifyDamageAfterMagicAbsorb(float initialDamage, float protLevels, CallbackInfoReturnable<Float> cir) {
+		// protLevels is the sum of protection levels across all armor pieces
+		// initialDamage is the amount of damage after effects like resistance. unsure if it's before or after normal armor/toughness DR
 
-		// vanilla's formula. gonna change it once DT's available
-		float f = Mth.clamp(enchantModifiers, 0.0F, 20.0F);
-		float final_damage = damage * (1.0F - f / 25.0F);
+		// vanilla's formula. gonna change it eventually
+		float f = Mth.clamp(protLevels, 0.0F, 20.0F);
+		float damage = initialDamage * (1.0F - f / 25.0F);
 
-		cir.setReturnValue(final_damage);
+		cir.setReturnValue(damage);
 	}
 }
