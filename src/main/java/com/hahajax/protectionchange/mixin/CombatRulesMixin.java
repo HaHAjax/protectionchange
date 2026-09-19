@@ -1,6 +1,6 @@
 package com.hahajax.protectionchange.mixin;
 
-import net.minecraft.util.Mth;
+import com.hahajax.protectionchange.formula.FormulaManager;
 import net.minecraft.world.damagesource.CombatRules;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,9 +19,7 @@ public class CombatRulesMixin {
 		// protLevels is the sum of protection levels across all armor pieces
 		// initialDamage is the amount of damage after effects like resistance. unsure if it's before or after normal armor/toughness DR
 
-		// vanilla's formula. gonna change it eventually
-		float f = Mth.clamp(protLevels, 0.0F, 20.0F);
-		float damage = initialDamage * (1.0F - f / 25.0F);
+		float damage = FormulaManager.compute(initialDamage, protLevels);
 
 		cir.setReturnValue(damage);
 	}

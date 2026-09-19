@@ -1,5 +1,6 @@
 package com.hahajax.protectionchange;
 
+import com.hahajax.protectionchange.config.ProtectionChangeConfig;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -21,6 +22,6 @@ public class ProtectionChange {
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public ProtectionChange(IEventBus modEventBus, ModContainer modContainer) {
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
-        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+        modContainer.registerConfig(ModConfig.Type.COMMON, ProtectionChangeConfig.SPEC);
     }
 }
